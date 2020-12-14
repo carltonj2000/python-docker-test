@@ -1,0 +1,10 @@
+FROM python:3.9.1 AS builder
+COPY requirements.txt .
+RUN pip install --user -r requirements.txt
+
+FROM python:3.9.1-slim
+WORKDIR /code
+COPY --from=builder /root/.local/bin /root/.local
+COPY ./src .
+ENV PATH=/root/.local:$PATH
+CMD [ "python", "./server.py" ]
