@@ -1,0 +1,9 @@
+server {
+    listen       80;
+    server_name  localhost catapp;
+    root /usr/share/nginx/html;
+    location /api/ {
+        proxy_pass   http://backend:5000/;
+    }
+
+}

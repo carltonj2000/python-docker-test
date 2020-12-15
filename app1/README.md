@@ -7,6 +7,12 @@ docker run -d -p 5000:5000 myimage
 docker build -t myimageslim -f Dockerfile.slim .
 ```
 
+Add to `/etc/hosts` because sometime localhost fails.
+
+```
+127.0.0.1       catapp
+```
+
 ## History
 
 The code in this repository is based on the
