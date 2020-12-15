@@ -7,6 +7,7 @@ docker stack deploy project1 --compose-file docker-compose.yaml
 docker stack remove project1
 # debug by running container one at a time
 docker run -d -p 80:80 frontend
+docker run -d -p 5000:5000 backend
 ```
 
 ## History
