@@ -7,5 +7,18 @@
   </head>
   <body>
     <h1>Docker Python MySQL</h1>
+    <button>Get Server Data</button>
+    <div></div>
+    <script>
+      const button = document.querySelector("button");
+      button.addEventListener("click", () => {
+        fetch("/api/")
+          .then((res) => res.json())
+          .then((res) => {
+            console.log("got res", res);
+          })
+          .catch((e) => console.log("err!!!", e));
+      });
+    </script>
   </body>
 </html>
